@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <title>Быки и коровы</title>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
+    <link rel="stylesheet" href="./assets/styles.min.css">
+  </head>
+  <body class="bg-gray">
+    <div class="container">
+      <div class="columns">
+        <div class="column col-mx-auto col-6 col-lg-8 col-md-10 col-sm-12">
+          <div class="top">
+            <h1 class="text-center">Быки и коровы</h1>
+            <p>Загадано четырехзначное число, в&nbsp;котором цифры не&nbsp;повторяться. Попробуйте отгадать его за&nbsp;10 ходов. Если в&nbsp;предложенном варианте есть цифра, которая стоит на&nbsp;верном месте, то&nbsp;это считается &laquo;быком&raquo;. Если&nbsp;же цифра верна, но&nbsp;не&nbsp;на&nbsp;своем месте, то&nbsp;это &laquo;корова&raquo;.</p>
+          </div>
+          <div class="card">
+            <div class="result"></div>
+            <div class="card-header">
+              <div class="columns">
+                <div class="column col-4 col-sm-6">
+                  <div class="form">
+                    <div class="input-group">
+                      <input class="form-input" id="player" type="number" placeholder="Ваш вариант" autocomplete="off" required>
+                      <input class="btn btn-primary input-group-btn" id="guess-btn" type="button" value="Ok" onClick="guess()">
+                    </div>
+                  </div>
+                </div>
+                <div class="column col-8 col-sm-6 pt-1">Осталось <span class="turns">10</span> ходов</div>
+              </div>
+            </div>
+            <div class="card-body">
+              <table class="table" id="turnsList">
+                <tr>
+                  <th>Ход</th>
+                  <th>Число</th>
+                  <th>
+                    <div class="popover popover-top">Быки *
+                      <div class="popover-container">
+                        <div class="card card-body text-gray text-normal">Кол-во угаданных цифр на&nbsp;своем месте</div>
+                      </div>
+                    </div>
+                  </th>
+                  <th>
+                    <div class="popover popover-top">Коровы *
+                      <div class="popover-container">
+                        <div class="card card-body text-gray text-normal">Кол-во угаданных цифр, но&nbsp;не&nbsp;на&nbsp;своей позиции</div>
+                      </div>
+                    </div>
+                  </th>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./assets/scripts.min.js"></script>
+  </body>
+</html>

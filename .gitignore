@@ -1,0 +1,12 @@
+# OS and Editor
+._*
+.cache
+.DS_Store
+.idea
+*.sublime-project
+*.sublime-workspace
+Thumbs.db
+
+# Folders
+node_modules
+.git

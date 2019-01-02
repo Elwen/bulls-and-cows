@@ -1,0 +1,41 @@
+extend ./layouts/default.pug
+
+block title
+  title Быки и коровы
+
+
+
+block body
+  .container
+    .columns
+      .column.col-mx-auto.col-6.col-lg-8.col-md-10.col-sm-12
+
+        .top
+          h1.text-center Быки и коровы
+          p Загадано четырехзначное число, в&nbsp;котором цифры не&nbsp;повторяться. Попробуйте отгадать его за&nbsp;10 ходов. Если в&nbsp;предложенном варианте есть цифра, которая стоит на&nbsp;верном месте, то&nbsp;это считается &laquo;быком&raquo;. Если&nbsp;же цифра верна, но&nbsp;не&nbsp;на&nbsp;своем месте, то&nbsp;это &laquo;корова&raquo;.
+
+        .card
+          .result
+
+          .card-header
+            .columns
+              .column.col-4.col-sm-6
+                .form
+                  .input-group
+                    input#player.form-input(type="number" placeholder="Ваш вариант" autocomplete="off" required)
+                    input#guess-btn.btn.btn-primary.input-group-btn(type="button" value="Ok" onClick="guess()")
+              .column.col-8.col-sm-6.pt-1 Осталось #[span.turns 10] ходов
+
+          .card-body
+            table#turnsList.table
+              tr
+                th Ход
+                th Число
+                th
+                  .popover.popover-top Быки *
+                    .popover-container
+                      .card.card-body.text-gray.text-normal Кол-во угаданных цифр на&nbsp;своем месте
+                th
+                  .popover.popover-top Коровы *
+                    .popover-container
+                      .card.card-body.text-gray.text-normal Кол-во угаданных цифр, но&nbsp;не&nbsp;на&nbsp;своей позиции
